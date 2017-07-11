@@ -10,6 +10,9 @@ import (
 	"strings"
 )
 
+const VERSION = `0.1`
+
+var showVersion bool
 var delim string
 var delimDefault *regexp.Regexp = regexp.MustCompile(`\s+`)
 var field string
@@ -54,10 +57,17 @@ func init() {
 	flag.StringVar(&field, `fields`, fieldDefault, `Field(s) to display`)
 	flag.StringVar(&field, `f`, fieldDefault, `Short form of -fields`)
 
+	flag.BoolVar(&showVersion, `version`, false, `Show version and exit`)
+
 	flag.Parse()
 }
 
 func main() {
+	if showVersion {
+		fmt.Println("gut", VERSION)
+		os.Exit(0)
+	}
+
 	re := regexp.MustCompile(delim)
 	fields := parseFieldString(field)
 
