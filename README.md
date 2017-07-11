@@ -23,6 +23,14 @@ $ echo "1,2,3" | gut -d , -d 2,3,1
 2 3 1
 ```
 
+## Install
+
+Currently this is the only option:
+
+```
+go get github.com/lillesvin/gut
+```
+
 ## Todo
 
  * Access fields by numbers relative to the last field.
