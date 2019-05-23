@@ -19,7 +19,7 @@ Output all fields.
 $ echo "1,2, 3. 4,5" | gut -d "[,\.]\s?" -f 1,3-5
 1 3 4 5
 
-$ echo "1,2,3" | gut -d , -d 2,3,1
+$ echo "1,2,3" | gut -d , -f 2,3,1
 2 3 1
 ```
 
